@@ -1,0 +1,43 @@
+
+.card {
+  margin-top: 15px;
+  opacity: 0.9;
+}
+
+.jumbotron {
+  margin-top: 15px;
+  opacity: 0.9;
+}
+
+button{
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+* { box-sizing: border-box; }
+.video-background {
+  background: rgb(0, 0, 0);
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+
+
+.video-background video {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+
+body {
+  background-color: #0E0E0E;
+}
+video {
+  background-color: #0E0E0E;
+}
+

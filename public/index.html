@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- #region CDN Dependencies -->
+    <!-- CDN Dependencies requires a functioning internet connection to use -->
+
+    <!-- BOOTSTRAP 4.0-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+
+    <!-- BOOT STRAP 3.3.6 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>  
+    <!-- #endregion -->
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>EF Bandagar</title>
+</head>
+
+<body>
+    <div id="app">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#/start">EF-bandagar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" v-on:click="redirect('/book')" href="#">Boka bandag</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" v-on:click="redirect('/trackinfo')" href="#">Information om banorna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" v-on:click="redirect('/login')" href="#">Mitt konto</a>
+                        </li>
+                        <li class="nav-item" v-if="isAdmin===true">
+                            <a v-if="isAdmin===true" class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" v-on:click="redirect('/admin')" href="#">Admin</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="video-background">
+            <video src="videos/test.mp4" type="video/mp4" autoplay loop muted playsinline></video>
+        </div>
+        <router-view></router-view>        
+    </div>
+
+    <!-- This fetches the socket.io connection object from the server. -->
+    <script src = "/socket.io/socket.io.js"></script>
+
+    <!-- #region Import app -->
+    <script src="./views/admin.view.js"></script>
+    <script src="./views/book.view.js"></script>
+    <script src="./views/confirm.view.js"></script>
+    <script src="./views/login.view.js"></script>
+    <script src="./views/profile.view.js"></script>
+    <script src="./views/start.view.js"></script>
+    <script src="./views/trackinfo.view.js"></script>
+    <script src="./app.js"></script>
+    <!-- #endregion -->
+</body>
+
+</html>
