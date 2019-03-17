@@ -7,7 +7,6 @@ const express = require('express');
 const http = require('http');
 const cookieParser = require('cookie-parser')
 
-var webpack = require('webpack');
 
 /**
  * This function sets up some boilerplate for express and socket.io
@@ -21,14 +20,6 @@ var webpack = require('webpack');
  * @returns ctx: { app: ExpressApp, io: SocketIOApp, listen: (port, callback) => void }
 */
 module.exports = () => {
-    plugins: [
-        // ...
-        new webpack.DefinePlugin({
-          'process.env': {
-            NODE_ENV: JSON.stringify('production')
-          }
-        })
-      ]
     const app = express(); // Creates express app
     const httpServer = http.Server(app); // Express usually does this for us, but socket.io needs the httpServer directly
     const io = require('socket.io').listen(httpServer); // Creates socket.io app
