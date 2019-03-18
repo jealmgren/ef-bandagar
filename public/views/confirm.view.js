@@ -80,7 +80,7 @@ Vue.component('route-confirm', {
   });
 
   },
-  template: `
+  template: ` 
   <div class="container">
     <div v-if="loggedIn===false" class="panel panel-primary" >
       <div class="row">
@@ -96,21 +96,22 @@ Vue.component('route-confirm', {
     </div>
     <div v-if="loggedIn===true" class="panel panel-primary" >
       <div class="row">
-      <div class="col-sm-6 offset-sm-3">
-        <div class="card text-white bg-dark">
-          <div class="card-body">
-            <h5 class="card-title">Bokningsbekräftelse</h5>
-            <p class="card-text">{{ 'Datum: ' }} {{ trackdayDate }}</p>
-            <p class="card-text">{{ 'Bana: ' }} {{ circuitName }}</p>
-            <tr v-for="trackday in trackdays">
-              <td>
-                <input type="radio" v-bind:value="trackday.trackdayID" v-model="trackdayID">
-                  <label>{{trackday.pace}} - antal lediga platser: {{ trackday.NoOfVacan}}</label>
-              </td>
-            </tr>
-            <div class="btn-group" role="group">
-              <button class="btn btn-success" v-on:click="confirm()">Slutför bokningen</button>
-              <button class="btn btn-danger" v-on:click="cancel()">Avbryt bokningen</button>
+        <div class="col-sm-6 offset-sm-3">
+          <div class="card text-white bg-dark">
+            <div class="card-body">
+              <h5 class="card-title">Bokningsbekräftelse</h5>
+              <p class="card-text">{{ 'Datum: ' }} {{ trackdayDate }}</p>
+              <p class="card-text">{{ 'Bana: ' }} {{ circuitName }}</p>
+              <tr v-for="trackday in trackdays">
+                <td>
+                  <input type="radio" v-bind:value="trackday.trackdayID" v-model="trackdayID">
+                    <label>{{trackday.pace}} - antal lediga platser: {{ trackday.NoOfVacan}}</label>
+                </td>
+              </tr>
+              <div class="btn-group" role="group">
+                <button class="btn btn-success" v-on:click="confirm()">Slutför bokningen</button>
+                <button class="btn btn-danger" v-on:click="cancel()">Avbryt bokningen</button>
+              </div>
             </div>
           </div>
         </div>
