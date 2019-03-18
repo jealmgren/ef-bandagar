@@ -56,6 +56,7 @@ Vue.component('route-profile', {
 				if (response.status === 200) {
 					alert("Du är nu utloggad! Välkommen åter.");
 					router.push('/start');
+					app.$data.isAdmin = false;
 				} else {
 					alert("Ops... Ett fel har uppstått... Försök igen");
 				}

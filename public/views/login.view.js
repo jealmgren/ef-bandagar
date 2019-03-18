@@ -23,9 +23,8 @@ Vue.component('route-login', {
 			.then(data => {
 				if (data.user) {
 					alert("Inloggning lyckad. Klicka för att komma till din profil.");
-					console.log(data.isAdmin);
 					this.$router.push("/profile");
-					this.$root.isAdmin = data.isAdmin;
+					app.$data.isAdmin = data.isAdmin;
 				} else {
 					alert("Fel användarnamn eller lösenord.");
 					this.password = '';
