@@ -1,8 +1,8 @@
 
 //require('better-logging')(console);
 const path = require('path');
-const expressSession = require('express-session');
-const sharedSession = require('express-socket.io-session');
+// const expressSession = require('express-session');
+// const sharedSession = require('express-socket.io-session');
 const express = require('express');
 const http = require('http');
 const cookieParser = require('cookie-parser')
@@ -50,14 +50,14 @@ module.exports = () => {
     */);
 
     // Setup session
-    const session = expressSession({
-        secret: `
-        43d0e88cfb377cdde3d68bfbcc0db57e`,
-        resave: true,
-        saveUninitialized: true,
-    });
-    app.use(session);
-    io.use(sharedSession(session));
+    // const session = expressSession({
+    //     secret: `
+    //     43d0e88cfb377cdde3d68bfbcc0db57e`,
+    //     resave: true,
+    //     saveUninitialized: true,
+    // });
+    // app.use(session);
+    // io.use(sharedSession(session));
 
     return {
         app, io,
