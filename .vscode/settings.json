@@ -1,3 +1,6 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "appService.showBuildDuringDeployPrompt": false,
+    "appService.defaultWebAppToDeploy": "/subscriptions/059a6c43-7dd3-4df8-94b1-f708d8f2fb10/resourceGroups/appsvc_rg_linux_centralus/providers/Microsoft.Web/sites/efbandagar",
+    "appService.deploySubpath": ""
 }
