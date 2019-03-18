@@ -1,8 +1,8 @@
 const setupBoilerplate = require('./boilerplate/setup');
 
 const { app, io, listen } =  setupBoilerplate();
-const port = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8080;
-const server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0' || localhost;
+const port = 8080;
+const server_ip_address = '0.0.0.0';
 
 // Bind REST controller to /api/*
 const router = require('./controllers/rest.controller.js');
